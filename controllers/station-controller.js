@@ -1,3 +1,4 @@
+import { reportStore } from "../models/report-store.js";
 import { stationStore } from "../models/station-store.js";
 
 export const stationController = {
@@ -9,5 +10,18 @@ export const stationController = {
         };
         response.render("station-view", viewData);
     },
+
+    async addReport(request, response) {
+        const station = await stationStore.getStationById(request.params.id);
+        const newReport = {
+            weatherCode: Number(request.body.weatherCode),
+            temperature: Number(request.body.temperature),
+            windSpeed: Number(request.body.temperature),
+            pressure: Number(request.body.pressure),
+        }
+        console.log('adding new weather report in ${station.title}');
+        await reportStore.addReport(station._id, newReport);
+        response.redirect("/station/" + station._id);
+    }
     
 };

@@ -1,0 +1,13 @@
+{
+  "file": "./models/reports.json",
+  "reports": [
+    {
+      "weatherCode": 0,
+      "temperature": 12,
+      "windSpeed": 12,
+      "pressure": 0,
+      "_id": "a8d7a177-19b2-4a84-b3fd-a92f1c20bbc3",
+      "stationid": "5caacff9-9254-49ac-bef8-8030b0471ec9"
+    }
+  ]
+}
