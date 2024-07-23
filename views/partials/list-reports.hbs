@@ -1,0 +1,36 @@
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Weather Code</th>
+      <th>Temperature</th>
+      <th>Wind Speed</th>
+      <th>Pressure</th>
+      <th>Edit Report</th>
+      <th>Delete report</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each station.reports}}
+    <tr>
+      <td>
+        {{weatherCode}}
+      </td>
+      <td>
+        {{temperature}}
+      </td>
+      <td>
+        {{windSpeed}}
+      </td>
+      <td>
+        {{pressure}}
+      </td>
+      <td>
+        {{>icons/open}}
+      </td>
+      <td>
+        {{>icons/delete}}
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

@@ -8,6 +8,22 @@
       "pressure": 0,
       "_id": "a8d7a177-19b2-4a84-b3fd-a92f1c20bbc3",
       "stationid": "5caacff9-9254-49ac-bef8-8030b0471ec9"
+    },
+    {
+      "weatherCode": 0,
+      "temperature": 13,
+      "windSpeed": 13,
+      "pressure": 123,
+      "_id": "a6c43e82-86ec-4b2e-9eea-7a8f1ad5d12a",
+      "stationid": "5caacff9-9254-49ac-bef8-8030b0471ec9"
+    },
+    {
+      "weatherCode": 0,
+      "temperature": 12,
+      "windSpeed": 12,
+      "pressure": 123,
+      "_id": "769342e6-62c0-4d6e-b591-d6fc8d5fcbae",
+      "stationid": "5caacff9-9254-49ac-bef8-8030b0471ec9"
     }
   ]
 }
