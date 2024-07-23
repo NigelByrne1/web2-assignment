@@ -4,7 +4,7 @@ export const stationController = {
     async index (request, response) {
         const station = await stationStore.getStationById(request.params.id);
         const viewData = {
-            title: "Station",
+            title: station.title,
             station: station,
         };
         response.render("station-view", viewData);
