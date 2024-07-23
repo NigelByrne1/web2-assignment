@@ -1,4 +1,13 @@
 {
   "file": "./models/stations.json",
-  "stations": []
+  "stations": [
+    {
+      "title": "test",
+      "_id": "9a8aff48-476e-4ecb-b186-3cd9c9af3d9e"
+    },
+    {
+      "title": "tet 2",
+      "_id": "7292c7dd-130c-42de-ba26-f91c3e733a8b"
+    }
+  ]
 }
