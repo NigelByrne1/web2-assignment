@@ -1,10 +1,10 @@
-import { playlistStore } from "../models/station-store.js";
+import { stationStore } from "../models/station-store.js";
 
 export const dashboardController = {
   async index(request, response) {
     const viewData = {
       title: "Station Dashboard",
-      playlists: await playlistStore.getAllStations(),
+      stations: await stationStore.getAllStations(),
     };
     console.log("dashboard rendering");
     response.render("dashboard-view", viewData);
@@ -14,8 +14,8 @@ export const dashboardController = {
     const newStation = {
       title: request.body.title,
     };
-    console.log(`adding playlist ${newStation.title}`);
-    await playlistStore.addStation(newStation);
+    console.log(`adding station ${newStation.title}`);
+    await stationStore.addStation(newStation);
     response.redirect("/dashboard");
   },
 };
