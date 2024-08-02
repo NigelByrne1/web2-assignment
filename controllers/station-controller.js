@@ -22,6 +22,13 @@ export const stationController = {
         console.log('adding new weather report in ${station.title}');
         await reportStore.addReport(station._id, newReport);
         response.redirect("/station/" + station._id);
-    }
+    },
     
+    async deleteReport(request, response) {
+        const stationId = request.params.stationid;
+        const reportId = request.params.reportid;
+        console.log(`Deleting Report ${reportId} from Station ${stationId}`);
+        await reportStore.deleteReport(request.params.reportId);
+        response.redirect("/station/" + stationId);
+      }
 };
