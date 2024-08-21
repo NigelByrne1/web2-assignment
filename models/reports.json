@@ -16,6 +16,14 @@
       "pressure": 342,
       "_id": "6ae165d7-fa2a-4330-a987-e79cd3ab6320",
       "stationid": "5caacff9-9254-49ac-bef8-8030b0471ec9"
+    },
+    {
+      "weatherCode": 0,
+      "temperature": 12,
+      "windSpeed": 12,
+      "pressure": 342,
+      "_id": "eaae258a-0e0d-4bab-a742-3f1992dfad02",
+      "stationid": "63c27486-8860-4c22-b27f-c800b5785818"
     }
   ]
 }
