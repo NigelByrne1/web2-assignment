@@ -24,6 +24,24 @@
       "pressure": 342,
       "_id": "eaae258a-0e0d-4bab-a742-3f1992dfad02",
       "stationid": "63c27486-8860-4c22-b27f-c800b5785818"
+    },
+    {
+      "weatherCode": "701",
+      "temperature": "123",
+      "windSpeed": "222",
+      "pressure": "342",
+      "iconCode": "50d",
+      "_id": "1646fcfb-68c6-4f67-9790-f95cd2497b87",
+      "stationid": "d5761964-e404-47c8-89d0-88290e36039a"
+    },
+    {
+      "weatherCode": "200",
+      "temperature": "12",
+      "windSpeed": "4",
+      "pressure": "123",
+      "iconCode": "11d",
+      "_id": "54142293-ffc6-46dc-9dc2-a1db5f47404f",
+      "stationid": "d5761964-e404-47c8-89d0-88290e36039a"
     }
   ]
 }

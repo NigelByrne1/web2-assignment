@@ -1,5 +1,7 @@
 import { reportStore } from "../models/report-store.js";
 import { stationStore } from "../models/station-store.js";
+import { getWeatherIconCode } from "../utils/misc-utils.js";
+
 
 export const stationController = {
     async index (request, response) {
@@ -13,13 +15,15 @@ export const stationController = {
 
     async addReport(request, response) {
         const station = await stationStore.getStationById(request.params.id);
+        const weatherCode = Number(request.body.weatherCode);
         const newReport = {
-            weatherCode: Number(request.body.weatherCode),
+            weatherCode: weatherCode,
             temperature: Number(request.body.temperature),
-            windSpeed: Number(request.body.temperature),
+            windSpeed: Number(request.body.windSpeed),
             pressure: Number(request.body.pressure),
+            iconCode: getWeatherIconCode(weatherCode),
         }
-        console.log('adding new weather report in ${station.title}');
+        console.log('adding new weather report');
         await reportStore.addReport(station._id, newReport);
         response.redirect("/station/" + station._id);
     },

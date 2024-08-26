@@ -13,7 +13,10 @@
     {{#each station.reports}}
     <tr>
       <td>
-        {{weatherCode}}
+        <figure class="image is-64x64">
+          <img src="https://openweathermap.org/img/wn/{{iconCode}}@2x.png" alt="Weather icon">
+        </figure>
+        <p>{{weatherCode}}</p>
       </td>
       <td>
         {{temperature}}
