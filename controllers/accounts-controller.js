@@ -1,16 +1,19 @@
 import { userStore } from "../models/user-store.js";
+import { loginAsGuest } from "../utils/misc-utils.js";
 
 export const accountsController = {
+  loginAsGuest,
+  
   index(request, response) {
     const viewData = {
-      title: "Login or Signup",
+      title: "Home",
     };
     response.render("index", viewData);
   },
 
   login(request, response) {
     const viewData = {
-      title: "Login to the Service",
+      title: "Login",
     };
     response.render("login-view", viewData);
   },
@@ -22,7 +25,7 @@ export const accountsController = {
 
   signup(request, response) {
     const viewData = {
-      title: "Login to the Service",
+      title: "Signup",
     };
     response.render("signup-view", viewData);
   },

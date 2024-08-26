@@ -1,5 +1,19 @@
-{{> welcome-menu}}
+{{> welcome-menu active="index"}}
 
 <section class="section">
-  <p> PLACEHOLDER FOR INDEX </p>
+  <div class="container has-text-centered">
+    <figure class="image is-128x128 is-inline-block">
+      <img src="views/images/TheWeatherStation.png" alt="The Weather Station Logo">
+    </figure>
+    <h1 class="title is-2">The Weather Station</h1>
+    <p class="subtitle is-4 mb-6">A simple, lightweight app for reporting weather.</p>
+
+    <div class="buttons is-centered">
+      <a class="button is-link" href="/login">Log in</a>
+      <a class="button is-link" href="/signup">Sign up</a>
+      <form action="/login-as-guest" method="POST">
+       <button class="button is-link is-light" type="submit">Continue as Guest</button>
+      </form>
+    </div>
+  </div>
 </section>
