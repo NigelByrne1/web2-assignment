@@ -1,5 +1,6 @@
 import { v4 } from "uuid";
 import { initStore } from "../utils/store-utils.js";
+import { getWeatherIconCode } from "../utils/misc-utils.js";
 
 const db = initStore("reports");
 
@@ -41,11 +42,14 @@ export const reportStore = {
   },
 
   async updateReport(report, updatedReport) {
-    report.weatherCode = updatedReport.weatherCode;
-    report.temperature = updatedReport.temperature;
-    report.windSpeed = updatedReport.windSpeed;
-    report.pressure = updatedReport.pressure;
-    report.iconCode = updatedReport.iconCode;
+    report.weatherCode = Number(updatedReport.weatherCode);
+    report.temperature = Number(updatedReport.temperature);
+    report.windSpeed = Number(updatedReport.windSpeed);
+    report.pressure = Number(updatedReport.pressure);
+    report.windDirection = updatedReport.windDirection;
+
+    report.iconCode = getWeatherIconCode(updatedReport.weatherCode);
+
     await db.write();
   },
 };

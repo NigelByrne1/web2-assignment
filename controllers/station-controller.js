@@ -20,6 +20,7 @@ export const stationController = {
             weatherCode: weatherCode,
             temperature: Number(request.body.temperature),
             windSpeed: Number(request.body.windSpeed),
+            windDirection: (request.body.windDirection),
             pressure: Number(request.body.pressure),
             iconCode: getWeatherIconCode(weatherCode),
         }

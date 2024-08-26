@@ -19,13 +19,14 @@ export const reportController = {
   async update(request, response) {
     const stationId = request.params.stationid;
     const reportId = request.params.reportid;
-    const weatherCode = request.body.weatherCode;
+    const weatherCode = Number(request.body.weatherCode);
     const updatedReport = {
       title: request.body.title,
       weatherCode: weatherCode,
-      temperature: request.body.temperature,
-      windSpeed: request.body.windSpeed,
-      pressure: request.body.pressure,
+      temperature: Number(request.body.temperature),
+      windSpeed: Number(request.body.windSpeed),
+      windDirection: request.body.windDirection,
+      pressure: Number(request.body.pressure),
       iconCode: getWeatherIconCode(weatherCode),
     };
     console.log(`Updating Report ${reportId} from Station ${stationId}`);

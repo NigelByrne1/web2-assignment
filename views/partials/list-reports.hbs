@@ -4,6 +4,7 @@
       <th>Weather Code</th>
       <th>Temperature</th>
       <th>Wind Speed</th>
+      <th>Wind Direction</th>
       <th>Pressure</th>
       <th>Edit Report</th>
       <th>Delete report</th>
@@ -13,16 +14,21 @@
     {{#each station.reports}}
     <tr>
       <td>
-        <figure class="image is-64x64">
-          <img src="https://openweathermap.org/img/wn/{{iconCode}}@2x.png" alt="Weather icon">
-        </figure>
-        <p>{{weatherCode}}</p>
+        <span class="is-inline-flex">
+          <figure class="image is-64x64 mr-4">
+            <img src="https://openweathermap.org/img/wn/{{iconCode}}@2x.png" alt="{{weatherCode}} - Icon">
+          </figure>
+          <p>{{weatherCode}}</p>
+        </span>
       </td>
       <td>
         {{temperature}}
       </td>
       <td>
         {{windSpeed}}
+      </td>
+      <td>
+        {{windDirection}}
       </td>
       <td>
         {{pressure}}

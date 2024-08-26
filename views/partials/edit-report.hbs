@@ -18,6 +18,29 @@
         <input class="input" type="text" placeholder="Enter Wind Speed" name="windSpeed" value="{{report.windSpeed}}">
       </div>
       <div class="field">
+        <label class="label">Wind Direction</label>
+          <div class="select">
+            <select name="windDirection" required>
+              <option value="N">North (N)</option>
+              <option value="NNE">North-Northeast (NNE)</option>
+              <option value="NE">Northeast (NE)</option>
+              <option value="ENE">East-Northeast (ENE)</option>
+              <option value="E">East (E)</option>
+              <option value="ESE">East-Southeast (ESE)</option>
+              <option value="SE">Southeast (SE)</option>
+              <option value="SSE">South-Southeast (SSE)</option>
+              <option value="S">South (S)</option>
+              <option value="SSW">South-Southwest (SSW)</option>
+              <option value="SW">Southwest (SW)</option>
+              <option value="WSW">West-Southwest (WSW)</option>
+              <option value="W">West (W)</option>
+              <option value="WNW">West-Northwest (WNW)</option>
+              <option value="NW">Northwest (NW)</option>
+              <option value="NNW">North-Northwest (NNW)</option>
+            </select>
+          </div>
+      </div>
+      <div class="field">
         <label class="label">Pressure: </label>
         <input class="input" type="text" placeholder="Enter Pressure" name="pressure" value="{{report.pressure}}">
       </div>
