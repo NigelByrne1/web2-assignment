@@ -2,48 +2,24 @@
   "file": "./models/reports.json",
   "reports": [
     {
-      "weatherCode": "023",
-      "temperature": "12",
-      "windSpeed": "12",
-      "pressure": "012",
-      "_id": "a8d7a177-19b2-4a84-b3fd-a92f1c20bbc3",
-      "stationid": "5caacff9-9254-49ac-bef8-8030b0471ec9"
-    },
-    {
-      "weatherCode": 0,
-      "temperature": 123,
-      "windSpeed": 123,
-      "pressure": 342,
-      "_id": "6ae165d7-fa2a-4330-a987-e79cd3ab6320",
-      "stationid": "5caacff9-9254-49ac-bef8-8030b0471ec9"
-    },
-    {
-      "weatherCode": 0,
+      "weatherCode": 701,
       "temperature": 12,
-      "windSpeed": 12,
+      "windSpeed": 222,
       "pressure": 342,
-      "_id": "eaae258a-0e0d-4bab-a742-3f1992dfad02",
-      "stationid": "63c27486-8860-4c22-b27f-c800b5785818"
-    },
-    {
-      "weatherCode": "701",
-      "temperature": "12",
-      "windSpeed": "222",
-      "pressure": "342",
       "iconCode": "50d",
       "_id": "0b294c69-ec51-4e88-bcc9-76e26a1dbd54",
       "stationid": "d5761964-e404-47c8-89d0-88290e36039a",
       "windDirection": "N"
     },
     {
-      "weatherCode": "511",
-      "temperature": "12",
-      "windSpeed": "4",
-      "pressure": "0",
+      "weatherCode": 511,
+      "temperature": 12,
+      "windSpeed": 4,
+      "pressure": 0,
       "iconCode": "10d",
       "_id": "b5472f76-261d-41e7-a917-f94396c76250",
       "stationid": "d5761964-e404-47c8-89d0-88290e36039a",
-      "windDirection": "SE"
+      "windDirection": "N"
     },
     {
       "weatherCode": 200,
@@ -66,22 +42,22 @@
       "stationid": "d5761964-e404-47c8-89d0-88290e36039a"
     },
     {
-      "weatherCode": "201",
-      "temperature": "123",
-      "windSpeed": "23",
-      "windDirection": "WNW",
-      "pressure": "1001",
-      "iconCode": "11d",
+      "weatherCode": 802,
+      "temperature": 123,
+      "windSpeed": 23,
+      "windDirection": "NNE",
+      "pressure": 1001,
+      "iconCode": "03d",
       "_id": "6d95a5eb-227f-48d5-b5c3-5de4d5e08037",
       "stationid": "d5761964-e404-47c8-89d0-88290e36039a"
     },
     {
-      "weatherCode": 802,
-      "temperature": 123,
+      "weatherCode": 803,
+      "temperature": 4,
       "windSpeed": 4,
       "windDirection": "N",
       "pressure": 1001,
-      "iconCode": "03d",
+      "iconCode": "04d",
       "_id": "993a3e47-e812-4975-b2e3-42e56d70fcc1",
       "stationid": "d5761964-e404-47c8-89d0-88290e36039a"
     }

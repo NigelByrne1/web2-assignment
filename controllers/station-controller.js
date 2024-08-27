@@ -1,6 +1,7 @@
 import { reportStore } from "../models/report-store.js";
 import { stationStore } from "../models/station-store.js";
 import { getWeatherIconCode } from "../utils/misc-utils.js";
+import { stationAnalytics } from "../utils/station-analytics.js";
 
 
 export const stationController = {
@@ -9,6 +10,13 @@ export const stationController = {
         const viewData = {
             title: station.title,
             station: station,
+            minTemperature: stationAnalytics.getMinTemperature(station),
+            maxTemperature: stationAnalytics.getMaxTemperature(station),
+            mostRecentReport: stationAnalytics.getMostRecentReport(station),
+            minWindSpeed: stationAnalytics.getMinWindSpeed(station),
+            maxWindSpeed: stationAnalytics.getMaxWindSpeed(station),
+            minPressure: stationAnalytics.getMinPressure(station),
+            maxPressure: stationAnalytics.getMaxPressure(station)
         };
         response.render("station-view", viewData);
     },

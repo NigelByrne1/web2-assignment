@@ -7,7 +7,7 @@ import { accountsController } from "../controllers/accounts-controller.js";
     return accountsController.authenticate(request, response);
   }
 
-  export function getWeatherIconCode(weatherCode) {
+    export function getWeatherIconCode(weatherCode) {
     let iconCode = '';
     if (weatherCode >= 200 && weatherCode <= 232) {
       iconCode = '11d'; 

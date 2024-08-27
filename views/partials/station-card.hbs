@@ -1,0 +1,36 @@
+<div class="columns is-multiline">
+    
+    <div class="column is-one-fifth">
+        {{>icons/location}}
+        <p>{{station.title}},  {{station.lat}},  {{station.lon}}</p>
+    </div>
+
+    <div class="column is-one-fifth">
+        <p>Weather {{mostRecentReport.weatherCode}}</p>
+        <figure class="image is-64x64">
+            <img src="https://openweathermap.org/img/wn/{{mostRecentReport.iconCode}}@2x.png" alt="{{mostRecentReport.weatherCode}} - Icon">
+        </figure>
+    </div>
+
+    <div class="column is-one-fifth">
+        {{>icons/temperature}}
+        <p>now: {{mostRecentReport.temperature}}</p>
+        <p>max: {{maxTemperature}}</p>
+        <p>min: {{minTemperature}}</p>
+    </div>
+
+    <div class="column is-one-fifth">
+        {{>icons/wind}}
+        <p>windspeed: {{mostRecentReport.windSpeed}} </p>
+        <p>wind direction: {{mostRecentReport.windDirection}}</p>
+        <p>max windspeed: {{maxWindSpeed}}</p>
+        <p>min windspeed: {{minWindSpeed}}</p>
+    </div>
+
+    <div class="column is-one-fifth">
+        {{>icons/pressure}}
+        <p>current pressure: {{mostRecentReport.pressure}}</p>
+        <p>max Pressure: {{maxPressure}}</p>
+        <p>min Pressure: {{minPressure}}</p>
+    </div>
+</div>
