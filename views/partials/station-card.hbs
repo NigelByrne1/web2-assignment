@@ -1,37 +1,100 @@
-<div class="columns is-multiline">
-    
-    <div class="column is-one-fifth">
-        {{>icons/location}}
-        <p>{{station.title}},  {{station.lat}},  {{station.lon}}</p>
-    </div>
+<div class="columns is-multiline m-1">
 
-    <div class="column is-one-fifth">
-        <p>Weather {{mostRecentReport.weatherCode}}</p>
-        <figure class="image is-64x64">
-            <img src="https://openweathermap.org/img/wn/{{mostRecentReport.iconCode}}@2x.png" alt="{{mostRecentReport.weatherCode}} - Icon">
-        </figure>
+  <div class="column is-one-fifth">
+    <div class="card has-background-black">
+      <div class="card-content">
+        <div class="is-flex">
+          <div class="media-content has-text-white">
+            <p class="title is-4 has-text-white is-spaced">{{station.title}}</p>
+            <p class="subtitle-is-8 has-text-white">Lat: {{station.lat}}</p>
+            <p class="subtitle-is-8 has-text-white">Lng: {{station.lon}}</p>
+            <br>
+            <br>
+          </div>
+          <div class="is-flex">
+              {{>icons/location}}
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <div class="column is-one-fifth">
-        {{>icons/temperature}}
-        <p>now: {{mostRecentReport.temperature}} °C</p>
-        <p>now: {{temperatureFahrenheit}} °F</p>
-        <p>max: {{maxTemperature}} °C</p>
-        <p>min: {{minTemperature}} °C</p>
+  <div class="column is-one-fifth">
+    <div class="card has-background-black">
+      <div class="card-content">
+        <div class="is-flex">
+          <div class="media-content has-text-white">
+            <p class="title is-4 has-text-white is-spaced">Weather</p>
+            <p class="subtitle-is-8 has-text-white">{{mostRecentReport.weatherCode}}</p>
+            <br>
+            <br>
+            <br>
+          </div>
+          <div class="is-flex">
+            <figure class="image is-48x48">
+              <img src="https://openweathermap.org/img/wn/{{mostRecentReport.iconCode}}@2x.png" alt="Weather Icon">
+            </figure>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <div class="column is-one-fifth">
-        {{>icons/wind}}
-        <p>windspeed: {{mostRecentReport.windSpeed}} km/h</p>
-        <p>wind direction: {{mostRecentReport.windDirection}}</p>
-        <p>max windspeed: {{maxWindSpeed}}  km/h</p>
-        <p>min windspeed: {{minWindSpeed}} km/h</p>
+  <div class="column is-one-fifth">
+    <div class="card has-background-black">
+      <div class="card-content">
+        <div class="is-flex">
+          <div class="media-content has-text-white">
+            <p class="title is-4 has-text-white is-spaced">Temp</p>
+            <p class="subtitle-is-8 has-text-white">{{mostRecentReport.temperature}} °C</p>
+            <p class="subtitle-is-8 has-text-white">{{temperatureFahrenheit}} °F</p>
+            <p class="subtitle-is-8 has-text-white">Max: {{maxTemperature}} °C</p>
+            <p class="subtitle-is-8 has-text-white">Min: {{minTemperature}} °C</p>
+          </div>
+          <div class="is-flex">
+              {{>icons/temperature}}
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <div class="column is-one-fifth">
-        {{>icons/pressure}}
-        <p>current pressure: {{mostRecentReport.pressure}} hPa</p>
-        <p>max Pressure: {{maxPressure}} hPa</p>
-        <p>min Pressure: {{minPressure}} hPa</p>
+  <div class="column is-one-fifth">
+    <div class="card has-background-black">
+      <div class="card-content">
+        <div class="is-flex">
+          <div class="media-content has-text-white">
+            <p class="title is-4 has-text-white is-spaced">Wind</p>
+            <p class="subtitle-is-8 has-text-white">{{mostRecentReport.windSpeed}} km/h</p>
+            <p class="subtitle-is-8 has-text-white">{{mostRecentReport.windDirection}}</p>
+            <p class="subtitle-is-8 has-text-white">Max: {{maxWindSpeed}} km/h</p>
+            <p class="subtitle-is-8 has-text-white">Min: {{minWindSpeed}} km/h</p>
+          </div>
+          <div class="is-flex">
+              {{>icons/wind}}
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <div class="column is-one-fifth">
+    <div class="card has-background-black">
+      <div class="card-content">
+        <div class="is-flex">
+          <div class="media-content has-text-white">
+            <p class="title is-4 has-text-white is-spaced">Pressure</p>
+            <p class="subtitle-is-8 has-text-white">{{mostRecentReport.pressure}} hPa</p>
+            <p class="subtitle-is-8 has-text-white">Max: {{maxPressure}} hPa</p>
+            <p class="subtitle-is-8 has-text-white">Min: {{minPressure}} hPa</p>
+            <br>
+          </div>
+          <div class="is-flex">
+              {{>icons/pressure}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>

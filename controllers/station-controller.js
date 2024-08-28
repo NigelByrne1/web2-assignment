@@ -9,19 +9,20 @@ export const stationController = {
     async index (request, response) {
         const station = await stationStore.getStationById(request.params.id);
         const mostRecentReport = stationAnalytics.getMostRecentReport(station);
-        const tenmperatureFahrenheit = miscUtils.getCelsiusToFahrenheit(mostRecentReport.temperature);
+        const temperatureFahrenheit = miscUtils.getCelsiusToFahrenheit(mostRecentReport.temperature);
         const viewData = {
             title: station.title,
             station: station,
             mostRecentReport: mostRecentReport,
             minTemperature: stationAnalytics.getMinTemperature(station),
             maxTemperature: stationAnalytics.getMaxTemperature(station),
-            tenmperatureFahrenheit: tenmperatureFahrenheit,
+            temperatureFahrenheit: temperatureFahrenheit,
             minWindSpeed: stationAnalytics.getMinWindSpeed(station),
             maxWindSpeed: stationAnalytics.getMaxWindSpeed(station),
             minPressure: stationAnalytics.getMinPressure(station),
             maxPressure: stationAnalytics.getMaxPressure(station)
         };
+        //console.log(temperatureFahrenheit);
         response.render("station-view", viewData);
     },
 

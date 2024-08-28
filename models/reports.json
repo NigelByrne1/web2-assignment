@@ -52,12 +52,12 @@
       "stationid": "d5761964-e404-47c8-89d0-88290e36039a"
     },
     {
-      "weatherCode": 803,
+      "weatherCode": 801,
       "temperature": 4,
       "windSpeed": 4,
       "windDirection": "N",
-      "pressure": 1001,
-      "iconCode": "04d",
+      "pressure": 56,
+      "iconCode": "02d",
       "_id": "993a3e47-e812-4975-b2e3-42e56d70fcc1",
       "stationid": "d5761964-e404-47c8-89d0-88290e36039a"
     }
