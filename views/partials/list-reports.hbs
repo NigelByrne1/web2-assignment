@@ -1,6 +1,7 @@
 <table class="table is-fullwidth is-bordered">
   <thead>
     <tr>
+      <th>Date/Time</th>
       <th>Weather Code</th>
       <th>Temperature</th>
       <th>Wind Speed</th>
@@ -13,6 +14,9 @@
   <tbody>
     {{#each station.reports}}
     <tr>
+      <td>
+        {{timestamp}}
+      </td>
       <td>
         <span class="is-inline-flex">
           <figure class="image is-64x64 mr-4">
@@ -31,7 +35,7 @@
         {{windDirection}}
       </td>
       <td>
-        {{pressure}}
+        {{pressure}} hPa
       </td>
       <td>
         <a href="/station/{{../station._id}}/editreport/{{_id}}" class="button">

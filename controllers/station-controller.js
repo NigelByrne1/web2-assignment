@@ -10,6 +10,7 @@ export const stationController = {
         const station = await stationStore.getStationById(request.params.id);
         const mostRecentReport = stationAnalytics.getMostRecentReport(station);
         const temperatureFahrenheit = miscUtils.getCelsiusToFahrenheit(mostRecentReport.temperature);
+        const weatherCondition = miscUtils.getWeatherCondition(mostRecentReport.weatherCode);
         const viewData = {
             title: station.title,
             station: station,
@@ -20,7 +21,8 @@ export const stationController = {
             minWindSpeed: stationAnalytics.getMinWindSpeed(station),
             maxWindSpeed: stationAnalytics.getMaxWindSpeed(station),
             minPressure: stationAnalytics.getMinPressure(station),
-            maxPressure: stationAnalytics.getMaxPressure(station)
+            maxPressure: stationAnalytics.getMaxPressure(station),
+            weatherCondition: weatherCondition,
         };
         //console.log(temperatureFahrenheit);
         response.render("station-view", viewData);
@@ -36,6 +38,7 @@ export const stationController = {
             windDirection: (request.body.windDirection),
             pressure: Number(request.body.pressure),
             iconCode: getWeatherIconCode(weatherCode),
+            timestamp: new Date().toISOString(),
         }
         console.log('adding new weather report');
         await reportStore.addReport(station._id, newReport);

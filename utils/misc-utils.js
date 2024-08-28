@@ -36,7 +36,33 @@ import { accountsController } from "../controllers/accounts-controller.js";
   export const miscUtils = {
     getCelsiusToFahrenheit(celsius) {
       return (celsius * 9/5) + 32;
-    }
+    },
+
+    getWeatherCondition(weatherCode) {
+      let weatherCondition = '';
+      if (weatherCode >= 200 && weatherCode <= 232) {
+          weatherCondition = 'Thunderstorms'; 
+      } else if (weatherCode >= 300 && weatherCode <= 321) {
+          weatherCondition = 'Drizzle'; 
+      } else if (weatherCode >= 500 && weatherCode <= 531) {
+          weatherCondition = 'Rain'; 
+      } else if (weatherCode === 511) {
+          weatherCondition = 'Freezing Rain'; 
+      } else if (weatherCode >= 600 && weatherCode <= 622) {
+          weatherCondition = 'Snow'; 
+      } else if (weatherCode >= 701 && weatherCode <= 781) {
+          weatherCondition = 'Mist'; 
+      } else if (weatherCode === 800) {
+          weatherCondition = 'Clear Sky'; 
+      } else if (weatherCode === 801) {
+          weatherCondition = 'Few Clouds'; 
+      } else if (weatherCode === 802) {
+          weatherCondition = 'Scattered Clouds'; 
+      } else if (weatherCode >= 803 && weatherCode <= 804) {
+          weatherCondition = 'Overcast or Broken Clouds'; 
+      }
+      return weatherCondition;
+    },
 
   };
   
