@@ -14,23 +14,24 @@
 
     <div class="column is-one-fifth">
         {{>icons/temperature}}
-        <p>now: {{mostRecentReport.temperature}}</p>
-        <p>max: {{maxTemperature}}</p>
-        <p>min: {{minTemperature}}</p>
+        <p>now: {{mostRecentReport.temperature}} °C</p>
+        <p>now: {{temperatureFahrenheit}} °F</p>
+        <p>max: {{maxTemperature}} °C</p>
+        <p>min: {{minTemperature}} °C</p>
     </div>
 
     <div class="column is-one-fifth">
         {{>icons/wind}}
-        <p>windspeed: {{mostRecentReport.windSpeed}} </p>
+        <p>windspeed: {{mostRecentReport.windSpeed}} km/h</p>
         <p>wind direction: {{mostRecentReport.windDirection}}</p>
-        <p>max windspeed: {{maxWindSpeed}}</p>
-        <p>min windspeed: {{minWindSpeed}}</p>
+        <p>max windspeed: {{maxWindSpeed}}  km/h</p>
+        <p>min windspeed: {{minWindSpeed}} km/h</p>
     </div>
 
     <div class="column is-one-fifth">
         {{>icons/pressure}}
-        <p>current pressure: {{mostRecentReport.pressure}}</p>
-        <p>max Pressure: {{maxPressure}}</p>
-        <p>min Pressure: {{minPressure}}</p>
+        <p>current pressure: {{mostRecentReport.pressure}} hPa</p>
+        <p>max Pressure: {{maxPressure}} hPa</p>
+        <p>min Pressure: {{minPressure}} hPa</p>
     </div>
 </div>

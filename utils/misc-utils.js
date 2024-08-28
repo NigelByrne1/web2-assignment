@@ -32,3 +32,11 @@ import { accountsController } from "../controllers/accounts-controller.js";
     }
     return iconCode;
   }
+
+  export const miscUtils = {
+    getCelsiusToFahrenheit(celsius) {
+      return (celsius * 9/5) + 32;
+    }
+
+  };
+  

@@ -2,17 +2,21 @@ import { reportStore } from "../models/report-store.js";
 import { stationStore } from "../models/station-store.js";
 import { getWeatherIconCode } from "../utils/misc-utils.js";
 import { stationAnalytics } from "../utils/station-analytics.js";
+import { miscUtils } from "../utils/misc-utils.js";
 
 
 export const stationController = {
     async index (request, response) {
         const station = await stationStore.getStationById(request.params.id);
+        const mostRecentReport = stationAnalytics.getMostRecentReport(station);
+        const tenmperatureFahrenheit = miscUtils.getCelsiusToFahrenheit(mostRecentReport.temperature);
         const viewData = {
             title: station.title,
             station: station,
+            mostRecentReport: mostRecentReport,
             minTemperature: stationAnalytics.getMinTemperature(station),
             maxTemperature: stationAnalytics.getMaxTemperature(station),
-            mostRecentReport: stationAnalytics.getMostRecentReport(station),
+            tenmperatureFahrenheit: tenmperatureFahrenheit,
             minWindSpeed: stationAnalytics.getMinWindSpeed(station),
             maxWindSpeed: stationAnalytics.getMaxWindSpeed(station),
             minPressure: stationAnalytics.getMinPressure(station),
