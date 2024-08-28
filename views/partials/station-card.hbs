@@ -1,13 +1,13 @@
-<div class="columns is-multiline m-1">
+<div class="columns is-multiline m-1 is-flex is-align-items-stretch">
 
   <div class="column is-one-fifth">
     <div class="card has-background-black">
       <div class="card-content">
         <div class="is-flex">
           <div class="media-content has-text-white">
-            <p class="title is-4 has-text-white is-spaced">{{station.title}}</p>
-            <p class="subtitle-is-8 has-text-white">Lat: {{station.lat}}</p>
-            <p class="subtitle-is-8 has-text-white">Lng: {{station.lon}}</p>
+            <h2 class="title is-4 has-text-white is-spaced">{{station.title}}</h2>
+            <p>Lat: {{station.lat}}</p>
+            <p>Lng: {{station.lon}}</p>
             <br>
             <br>
           </div>
@@ -24,8 +24,8 @@
       <div class="card-content">
         <div class="is-flex">
           <div class="media-content has-text-white">
-            <p class="title is-4 has-text-white is-spaced">Weather</p>
-            <p class="subtitle-is-8 has-text-white">{{mostRecentReport.weatherCode}}</p>
+            <h2 class="title is-4 has-text-white is-spaced">Weather</h2>
+            <p>{{mostRecentReport.weatherCode}}</p>
             <br>
             <br>
             <br>
@@ -45,11 +45,11 @@
       <div class="card-content">
         <div class="is-flex">
           <div class="media-content has-text-white">
-            <p class="title is-4 has-text-white is-spaced">Temp</p>
-            <p class="subtitle-is-8 has-text-white">{{mostRecentReport.temperature}} °C</p>
-            <p class="subtitle-is-8 has-text-white">{{temperatureFahrenheit}} °F</p>
-            <p class="subtitle-is-8 has-text-white">Max: {{maxTemperature}} °C</p>
-            <p class="subtitle-is-8 has-text-white">Min: {{minTemperature}} °C</p>
+            <h2 class="title is-4 has-text-white is-spaced">Temp</h2>
+            <p>{{mostRecentReport.temperature}} °C</p>
+            <p>{{temperatureFahrenheit}} °F</p>
+            <p>Max: {{maxTemperature}} °C</p>
+            <p>Min: {{minTemperature}} °C</p>
           </div>
           <div class="is-flex">
               {{>icons/temperature}}
@@ -64,11 +64,11 @@
       <div class="card-content">
         <div class="is-flex">
           <div class="media-content has-text-white">
-            <p class="title is-4 has-text-white is-spaced">Wind</p>
-            <p class="subtitle-is-8 has-text-white">{{mostRecentReport.windSpeed}} km/h</p>
-            <p class="subtitle-is-8 has-text-white">{{mostRecentReport.windDirection}}</p>
-            <p class="subtitle-is-8 has-text-white">Max: {{maxWindSpeed}} km/h</p>
-            <p class="subtitle-is-8 has-text-white">Min: {{minWindSpeed}} km/h</p>
+            <h2 class="title is-4 has-text-white is-spaced">Wind</h2>
+            <p>{{mostRecentReport.windSpeed}} km/h</p>
+            <p>{{mostRecentReport.windDirection}}</p>
+            <p>Max: {{maxWindSpeed}} km/h</p>
+            <p>Min: {{minWindSpeed}} km/h</p>
           </div>
           <div class="is-flex">
               {{>icons/wind}}
@@ -83,10 +83,10 @@
       <div class="card-content">
         <div class="is-flex">
           <div class="media-content has-text-white">
-            <p class="title is-4 has-text-white is-spaced">Pressure</p>
-            <p class="subtitle-is-8 has-text-white">{{mostRecentReport.pressure}} hPa</p>
-            <p class="subtitle-is-8 has-text-white">Max: {{maxPressure}} hPa</p>
-            <p class="subtitle-is-8 has-text-white">Min: {{minPressure}} hPa</p>
+            <h2 class="title is-4 has-text-white is-spaced">Pressure</h2>
+            <p>{{mostRecentReport.pressure}} hPa</p>
+            <p>Max: {{maxPressure}} hPa</p>
+            <p>Min: {{minPressure}} hPa</p>
             <br>
           </div>
           <div class="is-flex">
