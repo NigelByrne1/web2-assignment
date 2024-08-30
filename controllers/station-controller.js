@@ -3,6 +3,8 @@ import { stationStore } from "../models/station-store.js";
 import { getWeatherIconCode } from "../utils/misc-utils.js";
 import { stationAnalytics } from "../utils/station-analytics.js";
 import { miscUtils } from "../utils/misc-utils.js";
+import dayjs from "dayjs";
+
 
 
 export const stationController = {
@@ -38,7 +40,7 @@ export const stationController = {
             windDirection: (request.body.windDirection),
             pressure: Number(request.body.pressure),
             iconCode: getWeatherIconCode(weatherCode),
-            timestamp: new Date().toISOString(),
+            timestamp: dayjs().format('MMMM D, YYYY h:mm A'),
         }
         console.log('adding new weather report');
         await reportStore.addReport(station._id, newReport);
