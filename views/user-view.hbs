@@ -1,0 +1,52 @@
+{{> menu active="user"}}
+
+<section class="section">
+  <div class="box">
+    
+    <div class="columns">
+      <div class="column is-half has-text-centered">
+        <h3 class="title  mb-6">
+        User Information:
+        </h3>
+       <h4 class="title is-4 mt-6">First Name:</h4>
+       <p class="subtitle is-5 mb-6">{{loggedInUser.firstName}}</p>
+       <h4 class="title is-4 mt-large">Last Name:</h4>
+       <p class="subtitle is-5 mb-6">{{loggedInUser.lastName}}</p>
+       <h4 class="title is-4">Email</h4>
+       <p class="subtitle is-5 mb-6">{{loggedInUser.email}}</p>
+      </div>
+      <div class="column is-half mb-6">
+        <h3 class="title has-text-centered  mb-6">
+        Update Account:
+        </h3>
+
+        <form action="/user" method="POST">
+          <label class="label">Name</label>
+          <div class="field is-horizontal">
+            <div class="field-body">
+              <div class="field">
+                <input class="input" type="text" placeholder="{{loggedInUser.firstName}}" name="firstName">
+              </div>
+              <div class="field">
+                <input class="input" type="text" placeholder="{{loggedInUser.lastName}}" name="lastName">
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Email</label> 
+            <input class="input" type="email" placeholder="{{loggedInUser.email}}" name="email">
+          </div>
+          <div class="field">
+            <label class="label">Password</label> 
+            <input class="input" type="password" placeholder="Enter New Password" name="password">
+          </div>
+          <div class="field is-grouped">
+            <button class="button is-link">Submit</button>
+          </div>
+        </form>
+      </div>
+
+      </div>
+    </div>
+  </div>
+</section>

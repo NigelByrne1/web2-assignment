@@ -4,6 +4,7 @@ import { aboutController } from "./controllers/about-controller.js";
 import { stationController } from "./controllers/station-controller.js";
 import { reportController } from "./controllers/report-controller.js";
 import { accountsController } from "./controllers/accounts-controller.js";
+import { userController } from "./controllers/user-controller.js";
 
 export const router = express.Router();
 
@@ -25,3 +26,6 @@ router.get("/station/:stationid/deletereport/:reportid", stationController.delet
 
 router.get("/station/:stationid/editreport/:reportid", reportController.index);
 router.post("/station/:stationid/updatereport/:reportid", reportController.update);
+
+router.get("/user", userController.index);
+router.post("/user", userController.update);
