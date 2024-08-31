@@ -29,7 +29,9 @@ export const userController = {
         };
 
         console.log(`Updating user ${loggedInUser._id}`);
+   
         await userStore.updateUser(loggedInUser._id, updatedUser);
-        response.redirect("/user");
+    
+        response.redirect("/login");       
       },
 };
