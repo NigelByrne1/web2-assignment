@@ -9,25 +9,38 @@ import dayjs from "dayjs";
 
 export const stationController = {
     async index (request, response) {
+        
         const station = await stationStore.getStationById(request.params.id);
-        const mostRecentReport = stationAnalytics.getMostRecentReport(station);
-        const temperatureFahrenheit = miscUtils.getCelsiusToFahrenheit(mostRecentReport.temperature);
-        const weatherCondition = miscUtils.getWeatherCondition(mostRecentReport.weatherCode);
-        const viewData = {
-            title: station.title,
-            station: station,
-            mostRecentReport: mostRecentReport,
-            minTemperature: stationAnalytics.getMinTemperature(station),
-            maxTemperature: stationAnalytics.getMaxTemperature(station),
-            temperatureFahrenheit: temperatureFahrenheit,
-            minWindSpeed: stationAnalytics.getMinWindSpeed(station),
-            maxWindSpeed: stationAnalytics.getMaxWindSpeed(station),
-            minPressure: stationAnalytics.getMinPressure(station),
-            maxPressure: stationAnalytics.getMaxPressure(station),
-            weatherCondition: weatherCondition,
-        };
-        //console.log(temperatureFahrenheit);
-        response.render("station-view", viewData);
+        if (station.reports.length> 0 ){
+            const mostRecentReport = stationAnalytics.getMostRecentReport(station);
+            const temperatureFahrenheit = miscUtils.getCelsiusToFahrenheit(mostRecentReport.temperature);
+            const weatherCondition = miscUtils.getWeatherCondition(mostRecentReport.weatherCode);
+            const viewData = {
+                title: station.title,
+                station: station,
+                lat: station.lat,
+                lon: station.lon,
+                mostRecentReport: mostRecentReport,
+                minTemperature: stationAnalytics.getMinTemperature(station),
+                maxTemperature: stationAnalytics.getMaxTemperature(station),
+                temperatureFahrenheit: temperatureFahrenheit,
+                minWindSpeed: stationAnalytics.getMinWindSpeed(station),
+                maxWindSpeed: stationAnalytics.getMaxWindSpeed(station),
+                minPressure: stationAnalytics.getMinPressure(station),
+                maxPressure: stationAnalytics.getMaxPressure(station),
+                weatherCondition: weatherCondition,
+            };
+            //console.log(temperatureFahrenheit);
+            response.render("station-view", viewData);
+        } else {
+            const viewData = {
+                title: station.title,
+                station: station,
+                lat: station.lat,
+                lon: station.lon,
+        }
+        response.render("new-station-view", viewData);
+        }
     },
 
     async addReport(request, response) {

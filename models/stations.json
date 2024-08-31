@@ -7,6 +7,20 @@
       "lon": "-0.0004",
       "userid": "92a15adb-0f1b-43d6-9c49-b2492dd02b54",
       "_id": "d5761964-e404-47c8-89d0-88290e36039a"
+    },
+    {
+      "title": "Cork",
+      "lat": 43.123,
+      "lon": -47,
+      "userid": "92a15adb-0f1b-43d6-9c49-b2492dd02b54",
+      "_id": "15a7a85a-6d18-497a-a847-bb018a8192ca"
+    },
+    {
+      "title": "Dublin",
+      "lat": 85,
+      "lon": 147.2,
+      "userid": "92a15adb-0f1b-43d6-9c49-b2492dd02b54",
+      "_id": "7b61fb1d-e4ce-493c-a0d8-4c4f177daaf2"
     }
   ]
 }
