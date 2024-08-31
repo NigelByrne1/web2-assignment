@@ -4,10 +4,24 @@ import { accountsController } from "./accounts-controller.js";
 export const dashboardController = {
   async index(request, response) {
     const loggedInUser = await accountsController.getLoggedInUser(request);
+    
+    let stations = await stationStore.getStationByUserId(loggedInUser._id);
+
+    stations.sort((a, b) => {
+      if (a.title > b.title) {
+        return 1;  //1 tells to place/sort b before a
+      } else if (a.title < b.title) {
+        return -1;  //1 tells to place/sort a before b
+      } else {
+        return 0; // else theyre the same so dont change order
+      }
+    });
+    
     const viewData = {
       title: "Dashboard",
-      stations: await stationStore.getStationByUserId(loggedInUser._id),
+      stations: stations,  
     };
+    
     console.log("dashboard rendering");
     response.render("dashboard-view", viewData);
   },

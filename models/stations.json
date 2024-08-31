@@ -21,6 +21,20 @@
       "lon": 147.2,
       "userid": "92a15adb-0f1b-43d6-9c49-b2492dd02b54",
       "_id": "7b61fb1d-e4ce-493c-a0d8-4c4f177daaf2"
+    },
+    {
+      "title": "Galway",
+      "lat": 12,
+      "lon": 12,
+      "userid": "92a15adb-0f1b-43d6-9c49-b2492dd02b54",
+      "_id": "90a82ccc-534e-4b6b-ae2d-c7bbecc45f3e"
+    },
+    {
+      "title": "Richmond",
+      "lat": 12,
+      "lon": 123,
+      "userid": "92a15adb-0f1b-43d6-9c49-b2492dd02b54",
+      "_id": "63c3ce04-f45e-4df8-8c5b-92017e495b82"
     }
   ]
 }
