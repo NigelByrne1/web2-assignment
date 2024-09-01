@@ -13,7 +13,7 @@ export const dashboardController = {
     //const processedStations = stations.map(station => miscUtils.getStationData(station));
 
     
-    processedStations.sort((a, b) => {
+    stations.sort((a, b) => {
       if (a.title > b.title) {
         return 1;  // Place/sort b before a
       } else if (a.title < b.title) {
