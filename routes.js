@@ -29,3 +29,5 @@ router.post("/station/:stationid/updatereport/:reportid", reportController.updat
 
 router.get("/user", userController.index);
 router.post("/user", userController.update);
+
+router.post("/station/:id/autoupdate", stationController.autoUpdate);

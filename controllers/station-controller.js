@@ -66,5 +66,30 @@ export const stationController = {
         console.log(`Deleting Report ${reportId} from Station ${stationId}`);
         await reportStore.deleteReport(request.params.reportId);
         response.redirect("/station/" + stationId);
-      }
+      },
+
+    async autoUpdate(request, response) {
+        const station = await stationStore.getStationById(request.params.id);
+    
+        const apiKey = "432f6790dcd0195c35c9fe3711654b4f"; 
+        const stationTitle = station.title; 
+    
+        const apiResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${stationTitle}&units=metric&appid=${apiKey}`);
+        const data = await apiResponse.json();
+    
+        const weatherCode = data.weather[0].id;
+        const newReport = {
+          weatherCode: weatherCode,
+          temperature: data.main.temp,
+          windSpeed: data.wind.speed,
+          windDirection: miscUtils.getWindDirection(data.wind.deg),
+          pressure: data.main.pressure,
+          iconCode: getWeatherIconCode(weatherCode),
+          timestamp: dayjs().format('MMMM D, YYYY h:mm A'),
+        };
+    
+        console.log(`Auto-updating report for Station ${station._id}`);
+        await reportStore.addReport(station._id, newReport);
+        response.redirect("/station/" + station._id);
+    },
 };

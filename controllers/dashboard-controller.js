@@ -11,7 +11,7 @@ export const dashboardController = {
       if (a.title > b.title) {
         return 1;  //1 tells to place/sort b before a
       } else if (a.title < b.title) {
-        return -1;  //1 tells to place/sort a before b
+        return -1;  //- 1 tells to place/sort a before b
       } else {
         return 0; // else theyre the same so dont change order
       }

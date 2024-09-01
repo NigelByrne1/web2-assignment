@@ -50,3 +50,7 @@
   </div>
   <button class="button is-link">Submit Report</button>
 </form>
+
+<form action="/station/{{station._id}}/autoupdate" method="POST">
+  <button class="button is-danger" type="submit">Auto Submit Report (uses city name and OpenWeatherMap)</button>
+</form>

@@ -64,5 +64,25 @@ import { accountsController } from "../controllers/accounts-controller.js";
       return weatherCondition;
     },
 
+    getWindDirection(degree) {
+      if (degree > 337.5 || degree <= 22.5) return 'North';
+      if (degree > 22.5 && degree <= 45) return 'North-Northeast';
+      if (degree > 45 && degree <= 67.5) return 'Northeast';
+      if (degree > 67.5 && degree <= 90) return 'East-Northeast';
+      if (degree > 90 && degree <= 112.5) return 'East';
+      if (degree > 112.5 && degree <= 135) return 'East-Southeast';
+      if (degree > 135 && degree <= 157.5) return 'Southeast';
+      if (degree > 157.5 && degree <= 180) return 'South-Southeast';
+      if (degree > 180 && degree <= 202.5) return 'South';
+      if (degree > 202.5 && degree <= 225) return 'South-Southwest';
+      if (degree > 225 && degree <= 247.5) return 'Southwest';
+      if (degree > 247.5 && degree <= 270) return 'West-Southwest';
+      if (degree > 270 && degree <= 292.5) return 'West';
+      if (degree > 292.5 && degree <= 315) return 'West-Northwest';
+      if (degree > 315 && degree <= 337.5) return 'Northwest';
+      return 'North'; 
+    }
+    
+
   };
   
