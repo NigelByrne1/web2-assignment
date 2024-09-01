@@ -4,6 +4,7 @@ import { getWeatherIconCode } from "../utils/misc-utils.js";
 import { stationAnalytics } from "../utils/station-analytics.js";
 import { miscUtils } from "../utils/misc-utils.js";
 import dayjs from "dayjs";
+import axios from "axios";
 
 
 
@@ -74,22 +75,37 @@ export const stationController = {
         const apiKey = "432f6790dcd0195c35c9fe3711654b4f"; 
         const stationTitle = station.title; 
     
-        const apiResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${stationTitle}&units=metric&appid=${apiKey}`);
-        const data = await apiResponse.json();
-    
-        const weatherCode = data.weather[0].id;
+        const weatherRequestUrl = `https://api.openweathermap.org/data/2.5/weather?q=${stationTitle}&units=metric&appid=${apiKey}`;
+
+        console.log("Fetching weather data from OpenWeatherMap...");
+
+        const result = await axios.get(weatherRequestUrl);
+
+        if (result.status === 200) {
+        const currentWeather = result.data;
         const newReport = {
-          weatherCode: weatherCode,
-          temperature: data.main.temp,
-          windSpeed: data.wind.speed,
-          windDirection: miscUtils.getWindDirection(data.wind.deg),
-          pressure: data.main.pressure,
-          iconCode: getWeatherIconCode(weatherCode),
-          timestamp: dayjs().format('MMMM D, YYYY h:mm A'),
+            weatherCode: currentWeather.weather[0].id,
+            temperature: currentWeather.main.temp,
+            windSpeed: currentWeather.wind.speed,
+            windDirection: miscUtils.getWindDirection(currentWeather.wind.deg),
+            pressure: currentWeather.main.pressure,
+            iconCode: getWeatherIconCode(currentWeather.weather[0].id),
+            timestamp: dayjs().format('MMMM D, YYYY h:mm A'),
         };
-    
-        console.log(`Auto-updating report for Station ${station._id}`);
+
+        console.log("Weather data fetched successfully:", newReport);
+        
         await reportStore.addReport(station._id, newReport);
         response.redirect("/station/" + station._id);
+        } else {
+        console.log("Failed to fetch weather data. Status:", result.status);
+
+        const viewData = {
+            title: "Dashboard",
+            stations: await stationStore.getStationByUserId(station._id),
+        };
+        
+        response.render("dashboard-view", viewData);
+        }
     },
 };
