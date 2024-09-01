@@ -35,7 +35,8 @@ import { accountsController } from "../controllers/accounts-controller.js";
 
   export const miscUtils = {
     getCelsiusToFahrenheit(celsius) {
-      return (celsius * 9/5) + 32;
+      const fahrenheit = (celsius * 9/5) + 32;
+      return Math.round(fahrenheit * 100) / 100;
     },
 
     getWeatherCondition(weatherCode) {

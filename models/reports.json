@@ -66,6 +66,50 @@
       "timestamp": "September 1, 2024 3:29 AM",
       "_id": "83930122-e787-45ba-b0d2-a84bae4fcbff",
       "stationid": "63c3ce04-f45e-4df8-8c5b-92017e495b82"
+    },
+    {
+      "weatherCode": 804,
+      "temperature": 11.93,
+      "windSpeed": 2,
+      "windDirection": "East",
+      "pressure": 1016,
+      "iconCode": "04d",
+      "timestamp": "September 1, 2024 3:31 AM",
+      "_id": "6f979616-24d5-4be4-ab4b-c649a471377d",
+      "stationid": "1ffc6694-f93c-4ad3-bdc6-f8f57dbb8694"
+    },
+    {
+      "weatherCode": 804,
+      "temperature": 11.93,
+      "windSpeed": 2,
+      "windDirection": "East",
+      "pressure": 1016,
+      "iconCode": "04d",
+      "timestamp": "September 1, 2024 3:31 AM",
+      "_id": "65990ea1-17b1-45c9-b975-9d78c046d8ea",
+      "stationid": "1ffc6694-f93c-4ad3-bdc6-f8f57dbb8694"
+    },
+    {
+      "weatherCode": 804,
+      "temperature": 11.93,
+      "windSpeed": 2.2,
+      "windDirection": "East",
+      "pressure": 1016,
+      "iconCode": "04d",
+      "timestamp": "September 1, 2024 3:36 AM",
+      "_id": "ce27d229-c49f-4375-ab50-aa0105ad1783",
+      "stationid": "1ffc6694-f93c-4ad3-bdc6-f8f57dbb8694"
+    },
+    {
+      "weatherCode": 800,
+      "temperature": 19.27,
+      "windSpeed": 2.47,
+      "windDirection": "West-Southwest",
+      "pressure": 1014,
+      "iconCode": "01d",
+      "timestamp": "September 1, 2024 3:37 AM",
+      "_id": "563a1e45-f4e7-4dd2-9eba-651b6bd0d331",
+      "stationid": "d5761964-e404-47c8-89d0-88290e36039a"
     }
   ]
 }

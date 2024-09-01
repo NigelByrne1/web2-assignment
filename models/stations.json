@@ -35,6 +35,13 @@
       "lon": 123,
       "userid": "92a15adb-0f1b-43d6-9c49-b2492dd02b54",
       "_id": "63c3ce04-f45e-4df8-8c5b-92017e495b82"
+    },
+    {
+      "title": "Clonmel, Ireland",
+      "lat": 43.42,
+      "lon": 74.59,
+      "userid": "92a15adb-0f1b-43d6-9c49-b2492dd02b54",
+      "_id": "1ffc6694-f93c-4ad3-bdc6-f8f57dbb8694"
     }
   ]
 }
