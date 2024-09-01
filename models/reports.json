@@ -33,6 +33,17 @@
       "timestamp": "September 1, 2024 5:36 PM",
       "_id": "aa2c4cd3-e54d-44cb-a77e-b1f0c7361274",
       "stationid": "0fac65a3-1a84-4800-af6a-93dcfaf066c5"
+    },
+    {
+      "weatherCode": 804,
+      "temperature": 17.72,
+      "windSpeed": 1.1,
+      "windDirection": "East",
+      "pressure": 1011,
+      "iconCode": "04d",
+      "timestamp": "September 1, 2024 6:04 PM",
+      "_id": "5ded48d8-ce34-42e9-af7f-d67ae7e0e5cc",
+      "stationid": "0fac65a3-1a84-4800-af6a-93dcfaf066c5"
     }
   ]
 }

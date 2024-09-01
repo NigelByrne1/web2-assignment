@@ -1,6 +1,7 @@
 import { stationStore } from "../models/station-store.js";
 import { accountsController } from "./accounts-controller.js";
 import { reportStore } from "../models/report-store.js";
+import { miscUtils } from "../utils/misc-utils.js";
 
 export const dashboardController = {
   async index(request, response) {
@@ -8,19 +9,24 @@ export const dashboardController = {
     
     let stations = await stationStore.getStationByUserId(loggedInUser._id);
 
-    stations.sort((a, b) => {
+    //attmepting to itterate through the stations to display the report data 
+    const processedStations = stations.map(station => miscUtils.getStationData(station));
+
+    
+    processedStations.sort((a, b) => {
       if (a.title > b.title) {
-        return 1;  //1 tells to place/sort b before a
+        return 1;  // Place/sort b before a
       } else if (a.title < b.title) {
-        return -1;  //- 1 tells to place/sort a before b
+        return -1;  // Place/sort a before b
       } else {
-        return 0; // else theyre the same so dont change order
+        return 0; // Same titles, no change in order
       }
     });
     
     const viewData = {
       title: "Dashboard",
-      stations: stations,  
+      stations: stations, 
+      //stations: processedStations 
     };
     
     console.log("dashboard rendering");

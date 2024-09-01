@@ -1,5 +1,8 @@
 import { accountsController } from "../controllers/accounts-controller.js";
+import { stationAnalytics } from "./station-analytics.js";
+import { reportStore
 
+ } from "../models/report-store.js";
     export function loginAsGuest(request, response) {
     request.body.email = "test@test.test";
     request.body.password = "test";
@@ -82,8 +85,43 @@ import { accountsController } from "../controllers/accounts-controller.js";
       if (degree > 292.5 && degree <= 315) return 'West-Northwest';
       if (degree > 315 && degree <= 337.5) return 'Northwest';
       return 'North'; 
-    }
-    
+    },
 
-  };
+
+    //attempting a utility function to get data to display on dashboard
+    async getStationData(station) {
+      const reports = await reportStore.getReportsByStationId(station._id);
+      station.reports = reports;
+
+      if (station.reports.length > 0) {
+        const mostRecentReport = stationAnalytics.getMostRecentReport(station);
+        const temperatureFahrenheit = miscUtils.getCelsiusToFahrenheit(mostRecentReport.temperature);
+        const weatherCondition = miscUtils.getWeatherCondition(mostRecentReport.weatherCode);
+
+        return {
+          title: station.title,
+          station: station,
+          lat: station.lat,
+          lon: station.lon,
+          mostRecentReport: mostRecentReport,
+          minTemperature: stationAnalytics.getMinTemperature(station),
+          maxTemperature: stationAnalytics.getMaxTemperature(station),
+          temperatureFahrenheit: temperatureFahrenheit,
+          minWindSpeed: stationAnalytics.getMinWindSpeed(station),
+          maxWindSpeed: stationAnalytics.getMaxWindSpeed(station),
+          minPressure: stationAnalytics.getMinPressure(station),
+          maxPressure: stationAnalytics.getMaxPressure(station),
+          weatherCondition: weatherCondition,
+        };
+      } else {
+        return {
+          title: station.title,
+          station: station,
+          lat: station.lat,
+          lon: station.lon,
+        };
+      }
+  },
+
+}
   
