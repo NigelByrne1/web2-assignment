@@ -10,6 +10,12 @@ export const reportStore = {
     return db.data.reports;
   },
 
+  async deleteReportsByStationId(stationId) {
+    await db.read();
+    db.data.reports = db.data.reports.filter((report) => report.stationid !== stationId);
+    await db.write();
+  },
+
   async addReport(stationId, report) {
     await db.read();
     report._id = v4();

@@ -1,6 +1,6 @@
 import { stationStore } from "../models/station-store.js";
 import { accountsController } from "./accounts-controller.js";
-import { reportController } from "./report-controller.js";
+import { reportStore } from "../models/report-store.js";
 
 export const dashboardController = {
   async index(request, response) {
@@ -43,7 +43,10 @@ export const dashboardController = {
   async deleteStation(request, response) {
     const stationId = request.params.id;
     console.log(`Deleting Station ${stationId}`);
+
+    await reportStore.deleteReportsByStationId(stationId);
     await stationStore.deleteStationById(stationId);
+
     response.redirect("/dashboard");
   },
 

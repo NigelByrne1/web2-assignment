@@ -3,24 +3,10 @@
   "stations": [
     {
       "title": "Clonmel, Ireland",
-      "lat": 43.42,
-      "lon": 74.59,
+      "lat": 12,
+      "lon": 13,
       "userid": "92a15adb-0f1b-43d6-9c49-b2492dd02b54",
-      "_id": "1ffc6694-f93c-4ad3-bdc6-f8f57dbb8694"
-    },
-    {
-      "title": "cork,ireland",
-      "lat": 50,
-      "lon": 50,
-      "userid": "92a15adb-0f1b-43d6-9c49-b2492dd02b54",
-      "_id": "efac53d2-45ff-4987-b74a-f486513b0638"
-    },
-    {
-      "title": "new york",
-      "lat": 10,
-      "lon": 10,
-      "userid": "92a15adb-0f1b-43d6-9c49-b2492dd02b54",
-      "_id": "fd70d31f-a746-41cf-89de-f543070e4fde"
+      "_id": "0fac65a3-1a84-4800-af6a-93dcfaf066c5"
     }
   ]
 }
