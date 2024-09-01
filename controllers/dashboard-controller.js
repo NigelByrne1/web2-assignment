@@ -1,7 +1,7 @@
 import { stationStore } from "../models/station-store.js";
 import { accountsController } from "./accounts-controller.js";
 import { reportStore } from "../models/report-store.js";
-import { miscUtils } from "../utils/misc-utils.js";
+//import { miscUtils } from "../utils/misc-utils.js";
 
 export const dashboardController = {
   async index(request, response) {
@@ -10,7 +10,7 @@ export const dashboardController = {
     let stations = await stationStore.getStationByUserId(loggedInUser._id);
 
     //attmepting to itterate through the stations to display the report data 
-    const processedStations = stations.map(station => miscUtils.getStationData(station));
+    //const processedStations = stations.map(station => miscUtils.getStationData(station));
 
     
     processedStations.sort((a, b) => {
