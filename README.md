@@ -9,3 +9,6 @@ Weather Station App is a simple and intuitive web application that allows users 
 - **Manual Weather Report Entry:** Users can manually input weather data, including temperature, wind speed, direction, pressure, and weather code.
 - **Auto Report Submission:** Users can automatically submit weather reports for a station using the OpenWeatherMap API, based on the station's title.
 - **View Weather Reports:** Users can view the most recent reports for each station, including the temperature in Celsius and Fahrenheit, wind details, and atmospheric pressure.
+
+## Try it out
+https://cubic-bony-buffer.glitch.me/
